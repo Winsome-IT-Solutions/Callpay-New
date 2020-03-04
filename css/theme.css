@@ -1,14 +1,11 @@
-.callpay-banner {
-  background-image: url(../images/bg-02.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 540px;
-}
 .green-button {
   background-color: rgb(146, 208, 80);
 }
 .blue-button {
   background-color: rgb(18, 138, 246);
+}
+.red-button {
+  background-color: rgb(218, 103, 110);
 }
 .text-white {
   color: white;
@@ -19,6 +16,16 @@
 .text-grey {
   color: rgb(118, 113, 113);
 }
+
+/* Index Page */
+
+.callpay-banner {
+  background-image: url(../images/bg-02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 540px;
+}
+
 .header-callpay {
   padding-left: 120px;
   padding-right: 60px;
@@ -267,6 +274,61 @@ nav {
   font-weight: 800;
 }
 
+/* Features Page */
+.features-banner {
+  background-image: url(../images/Feature-Page-Banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 740px;
+}
+.banner-features {
+  text-align: center;
+  padding: 20px;
+}
+.featurespage-heading {
+  margin-top: 20%;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+  background: rgba(0, 0, 0, 0.13);
+  color: #faf8f88e;
+}
+.features-body {
+  background-color: rgb(241, 241, 241);
+  text-align: center;
+}
+.features-body-heading {
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: rgb(38, 38, 38);
+  padding: 10px;
+  padding-bottom: 15px;
+}
+.features-body-heading span {
+  color: rgb(89, 89, 89);
+}
+.features-body-heading::after {
+  content: "";
+  width: 200px;
+  height: 3px;
+  background-color: rgb(38, 38, 39);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+.features-body-container {
+  margin-top: 30px;
+  padding: 30px;
+}
+.features-inside-header {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
 /* Media Queries */
 @media (max-width: 1400px) and (min-width: 1200px) {
   .card-upper {

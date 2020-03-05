@@ -296,6 +296,7 @@ nav {
 .features-body {
   background-color: rgb(241, 241, 241);
   text-align: center;
+  padding-bottom: 60px;
 }
 .features-body-heading {
   position: relative;
@@ -303,6 +304,7 @@ nav {
   font-weight: 500;
   color: rgb(38, 38, 38);
   padding: 10px;
+  padding-top: 30px;
   padding-bottom: 15px;
 }
 .features-body-heading span {
@@ -325,9 +327,19 @@ nav {
   padding: 30px;
 }
 .features-inside-header {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 500;
-  margin-bottom: 5px;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+.features-paragraph {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 20px;
+  padding-top: 5px;
+}
+.row.app_row:nth-child(even) {
+  flex-direction: row-reverse;
 }
 /* Media Queries */
 @media (max-width: 1400px) and (min-width: 1200px) {

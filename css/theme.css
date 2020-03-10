@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Exo&display=swap");
+body {
+  font-family: "Exo", sans-serif;
+}
+
 .green-button {
   background-color: rgb(146, 208, 80);
 }
@@ -30,9 +35,70 @@
   padding-left: 120px;
   padding-right: 60px;
 }
-nav {
+.callpay nav {
   background: transparent;
   min-height: 85px;
+}
+.callpay-inner nav {
+  background: #05466a;
+  min-height: 85px;
+}
+.inner-pages-header {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+.contactform .form-group label span {
+  color: #f83546;
+}
+.contactform form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.contactform label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.contactform input,
+.contactform textarea {
+  padding: 10px;
+  padding-left: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.1rem;
+  width: 300px;
+}
+.form-group:nth-child(1) label::after,
+.form-group:nth-child(2) label::after,
+.form-group:nth-child(3) label::after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+}
+.inner-pages-header::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  background-color: rgb(1, 1, 102);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  margin: 0 auto;
 }
 .nav-link {
   color: white !important;
@@ -97,6 +163,11 @@ nav {
 }
 .card-text {
   font-size: small;
+}
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 0.75rem;
 }
 .card-upper {
   margin-top: 20px;

@@ -212,7 +212,7 @@
         </div>
       </section>
 
-         <footer class="footer-callpay">
+      <footer class="footer-callpay">
         <div class="container-fluid">
           <div class="row">
             <div
@@ -252,40 +252,60 @@
       </div>
     </div>
   </body>
-      <!-- Facebook Pixel Code -->
-    <script>
-      !(function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "795375914237721");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=795375914237721&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
+  <script>
+    jQuery(function() {
+      createSticky(jQuery("#sticky-wrap"));
+    });
+
+    function createSticky(sticky) {
+      if (typeof sticky != "undefined") {
+        var pos = sticky.offset().top,
+          win = jQuery(window);
+
+        win.on("scroll", function() {
+          if (win.scrollTop() > pos) {
+            sticky.addClass("stickyhead");
+          } else {
+            sticky.removeClass("stickyhead");
+          }
+        });
+      }
+    }
+  </script>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !(function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", "795375914237721");
+    fbq("track", "PageView");
+  </script>
+  <noscript
+    ><img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=795375914237721&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
 </html>

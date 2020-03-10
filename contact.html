@@ -52,55 +52,110 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="callpay">
-    <!-- Header END -->
+    <div class="callpay-inner">
+      <header>
+        <nav
+          class="navbar navbar-expand-lg navbar-light top-navbar"
+          data-toggle="sticky-onscroll"
+          id="sticky-wrap"
+        >
+          <div class="container-fluid header-callpay">
+            <a class="navbar-brand" href="index.html"
+              ><img src="images/CallPay_Logo_-10.png" width="150"
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="container">
-      <h1 style="margin-bottom: 50px">Contact</h1>
-      <form>
-        <div class="form-group">
-          <label>Name</label>
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            placeholder="Enter your Full Name"
-          />
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your Email ID"
-          />
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input
-            type="number"
-            id="number"
-            name="phone"
-            placeholder="Enter your Phone Number"
-          />
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea
-            name="message"
-            id="message_box"
-            placeholder="Enter your Message"
-          ></textarea>
-        </div>
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav pull-right">
+                <li class="nav-item">
+                  <a class="nav-link" href="features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#redeem">How To Redeem</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="btn btn-primary"
+                    style="padding-top: 5px; font-size: 20px; font-weight: 500; border-radius: 10px;"
+                    href="#"
+                    >BLOG</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Header END -->
 
-        <div class="form-group">
-          <input type="button" name="sub" id="contact_form" value="Submit" />
-        </div>
-      </form>
-    </div>
+      <div class="container">
+        <div class="contactform">
+          <h1 class="inner-pages-header" style="margin-bottom: 25px">
+            Contact
+          </h1>
+          <form>
+            <div class="form-group">
+              <label>Name</label>
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="Enter your Full Name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your Email ID"
+              />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input
+                type="number"
+                id="number"
+                name="phone"
+                placeholder="Enter your Phone Number"
+              />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea
+                name="message"
+                id="message_box"
+                placeholder="Enter your Message"
+              ></textarea>
+            </div>
 
-   <footer class="footer-callpay">
+            <div class="form-group">
+              <input
+                type="button"
+                name="sub"
+                id="contact_form"
+                value="Submit"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="footer-callpay">
         <div class="container-fluid">
           <div class="row">
             <div
@@ -140,95 +195,115 @@
       </div>
     </div>
   </body>
-   <script>
-      function isValidEmailAddress(emailAddress) {
-        var pattern = new RegExp(
-          /^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i
-        );
-        return pattern.test(emailAddress);
-      }
+  <script>
+    jQuery(function() {
+      createSticky(jQuery("#sticky-wrap"));
+    });
 
-      $(document).ready(function() {
-        $("#contact_form").click(function() {
-          var fullname = $("#fullname").val();
-          var email_text = $("#email").val();
-          var mbno = $("#number").val();
-          var message_box = $("#message_box").val();
+    function createSticky(sticky) {
+      if (typeof sticky != "undefined") {
+        var pos = sticky.offset().top,
+          win = jQuery(window);
 
-          if (fullname == "") {
-            alert("Please Enter Your Full Name");
-            $("#fullname").focus();
-          } else if (email_text == "") {
-            alert("Please Enter Your Email ID");
-            $("#email").focus();
-          } else if (!isValidEmailAddress(email_text)) {
-            alert("Please Enter Valid Email Address");
-            $("#email").focus();
-            $(".errormsg_txt").text("Please Enter Valid Email Address");
-          } else if (mbno == "") {
-            alert("Please Enter Your Mobile Number");
-            $("#number").focus();
-          } else if (isNaN(mbno) || mbno.length !== 10) {
-            alert("Please Enter Valid Phone Number");
-            $("#number").focus();
+        win.on("scroll", function() {
+          if (win.scrollTop() > pos) {
+            sticky.addClass("stickyhead");
           } else {
-            $.ajax({
-              type: "POST",
-              url: "contact.php",
-              data:
-                "fullname=" +
-                fullname +
-                "&mbno=" +
-                mbno +
-                "&email_text=" +
-                email_text +
-                "&message_box=" +
-                message_box,
-              success: function(data) {
-                alert(
-                  "Thank you For Contacting Us. We will get in touch with you shortly!"
-                );
-                Window.location.href = "contact.html";
-              }
-            });
+            sticky.removeClass("stickyhead");
           }
         });
-      });
-    </script>
-    <!-- Facebook Pixel Code -->
-    <script>
-      !(function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
+      }
+    }
+  </script>
+  <script>
+    function isValidEmailAddress(emailAddress) {
+      var pattern = new RegExp(
+        /^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i
       );
-      fbq("init", "795375914237721");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=795375914237721&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
+      return pattern.test(emailAddress);
+    }
+
+    $(document).ready(function() {
+      $("#contact_form").click(function() {
+        var fullname = $("#fullname").val();
+        var email_text = $("#email").val();
+        var mbno = $("#number").val();
+        var message_box = $("#message_box").val();
+
+        if (fullname == "") {
+          alert("Please Enter Your Full Name");
+          $("#fullname").focus();
+        } else if (email_text == "") {
+          alert("Please Enter Your Email ID");
+          $("#email").focus();
+        } else if (!isValidEmailAddress(email_text)) {
+          alert("Please Enter Valid Email Address");
+          $("#email").focus();
+          $(".errormsg_txt").text("Please Enter Valid Email Address");
+        } else if (mbno == "") {
+          alert("Please Enter Your Mobile Number");
+          $("#number").focus();
+        } else if (isNaN(mbno) || mbno.length !== 10) {
+          alert("Please Enter Valid Phone Number");
+          $("#number").focus();
+        } else {
+          $.ajax({
+            type: "POST",
+            url: "contact.php",
+            data:
+              "fullname=" +
+              fullname +
+              "&mbno=" +
+              mbno +
+              "&email_text=" +
+              email_text +
+              "&message_box=" +
+              message_box,
+            success: function(data) {
+              alert(
+                "Thank you For Contacting Us. We will get in touch with you shortly!"
+              );
+              Window.location.href = "contact.html";
+            }
+          });
+        }
+      });
+    });
+  </script>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !(function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", "795375914237721");
+    fbq("track", "PageView");
+  </script>
+  <noscript
+    ><img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=795375914237721&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
 </html>

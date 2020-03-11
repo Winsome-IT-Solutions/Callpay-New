@@ -202,7 +202,7 @@ body {
   margin: 1.5%;
   font-size: 2.5rem;
   font-weight: 700;
-  width: 250px;
+  width: 100%;
   border-radius: 6px;
 }
 .counter::after {
@@ -303,8 +303,9 @@ body {
 }
 .partners-logo-section {
   text-align: center;
-  margin-top: 60px;
   padding: 25px;
+  display: inline-block;
+  margin-top: 70px;
 }
 .partners-heading {
   font-size: 2.2rem;
@@ -505,7 +506,7 @@ body {
     margin: 1.5%;
     font-size: 2.5rem;
     font-weight: 700;
-    width: 250px;
+    width: 100%;
     border-radius: 6px;
   }
 }
@@ -710,7 +711,7 @@ body {
     margin-bottom: 20px;
   }
   .banner-image {
-    width: 250px;
+    width: 100%;
   }
   .howitworks-callpay {
     margin-top: 60px;

@@ -128,7 +128,10 @@
                   <li>Magic happens when you use Callpay</li>
                 </ul>
                 <div class="banner-button">
-                  <button class="download-app-callpay green-button text-black">
+                  <button
+                    class="download-app-callpay green-button text-black"
+                    onclick="window.location.href = 'https://play.google.com/store/apps/details?id=in.app.ai.callpay';"
+                  >
                     DOWNLOAD APP
                   </button>
                 </div>
@@ -329,7 +332,10 @@
                   Watch how Callpay can benefit you to earn money without
                   investing a single rupee.
                 </p>
-                <button class="download-app-callpay blue-button text-white">
+                <button
+                  class="download-app-callpay blue-button text-white"
+                  onclick="window.location.href = 'https://play.google.com/store/apps/details?id=in.app.ai.callpay';"
+                >
                   DOWNLOAD APP
                 </button>
               </div>
@@ -434,7 +440,15 @@
             <div
               class="col-lg-6 col-md-6 col-sm-12 col-12 partners-logo-section"
             >
-              <img src="images/Untitled-1g.png" width="70%" />
+              <a href="https://paytm.com/"
+                ><img src="images/Paytm-Logo.png" width="20%"
+              /></a>
+              <a href="https://google.com/"
+                ><img src="images/Google-Logo.png" width="20%"
+              /></a>
+              <a href="https://adcharge.eu/"
+                ><img src="images/Ad-Charge-Logo.png" width="20%"
+              /></a>
             </div>
           </div>
         </div>
@@ -446,23 +460,39 @@
               class="col-lg-3 col-md-3 col-sm-12 col-12"
               style="text-align: center;"
             >
-              <img src="images/google-play.png" width="150" />
-              <p class="footer-text-1 text-white">DOWNLOAD THE APP NOW</p>
+              <a
+                href="https://play.google.com/store/apps/details?id=in.app.ai.callpay"
+                ><img src="images/google-play.png" width="150"
+              /></a>
+              <p class="footer-text-1 text-white">
+                <a
+                  class="text-white"
+                  href="https://play.google.com/store/apps/details?id=in.app.ai.callpay"
+                  >DOWNLOAD THE APP NOW</a
+                >
+              </p>
             </div>
             <div
               class="col-lg-6 col-md-6 col-sm-12 col-12"
               style="text-align: center;"
             >
               <p class="footer-text-1 text-white">
-                <a>Help</a> | <a>FAQ</a> | <a>Disclaimer</a> |
-                <a>Terms & Conditions</a>
+                <a class="text-white" href="/help.html">Help</a> |
+                <a class="text-white" href="/faq.html">FAQ</a> |
+                <a class="text-white" href="/disclaimer.html">Disclaimer</a> |
+                <a class="text-white" href="/terms.html">Terms & Conditions</a>
               </p>
               <p class="footer-text-1 text-white">
-                <a>Features</a> | <a>Blog</a> | <a>Contact</a> |
-                <a>Advertise</a> | <a>Sitemap</a>
+                <a class="text-white" href="/features.html">Features</a> |
+                <a>Blog</a> |
+                <a class="text-white" href="/contact.html">Contact</a> |
+                <a class="text-white" href="/advertising.html">Advertise</a> |
+                <a class="text-white" href="/sitemap.xml">Sitemap</a>
               </p>
               <p class="footer-text-1 text-white">
-                <a>Privacy Policy</a>
+                <a class="text-white" href="/privacy-policy.html"
+                  >Privacy Policy</a
+                >
               </p>
             </div>
             <div
@@ -540,40 +570,40 @@
       }
     });
   </script>
-   <!-- Facebook Pixel Code -->
-    <script>
-      !(function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "795375914237721");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=795375914237721&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
+  <!-- Facebook Pixel Code -->
+  <script>
+    !(function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", "795375914237721");
+    fbq("track", "PageView");
+  </script>
+  <noscript
+    ><img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=795375914237721&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
 </html>

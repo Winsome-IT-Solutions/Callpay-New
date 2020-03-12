@@ -23,7 +23,10 @@ body {
 }
 
 /* Index Page */
-
+.tilt {
+  box-shadow: 0 20px 27px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+}
 .callpay-banner {
   background-image: url(../images/bg-02.png);
   background-repeat: no-repeat;
